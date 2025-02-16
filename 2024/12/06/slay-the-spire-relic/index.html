@@ -1,0 +1,162 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>slay-the-spire-relic | HXW的废纸堆</title><meta name="author" content="HXW"><meta name="copyright" content="HXW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于Slay The Spire的遗物">
+<meta property="og:type" content="article">
+<meta property="og:title" content="slay-the-spire-relic">
+<meta property="og:url" content="https://sleepyholo.github.io/2024/12/06/slay-the-spire-relic/index.html">
+<meta property="og:site_name" content="HXW的废纸堆">
+<meta property="og:description" content="关于Slay The Spire的遗物">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sleepyholo.github.io/img/Holo.png">
+<meta property="article:published_time" content="2024-12-05T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-12-06T06:31:45.292Z">
+<meta property="article:author" content="HXW">
+<meta property="article:tag" content="Mod">
+<meta property="article:tag" content="SlayTheSpire">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sleepyholo.github.io/img/Holo.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sleepyholo.github.io/2024/12/06/slay-the-spire-relic/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'slay-the-spire-relic',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background: linear-gradient(0deg, #0062be, #d5dfed, #0062be);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/Holo.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(0deg, #0062be, #925696, #28426e, #420347);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">HXW的废纸堆</span></a><a class="nav-page-title" href="/"><span class="site-name">slay-the-spire-relic</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">slay-the-spire-relic</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-12-05T16:00:00.000Z" title="发表于 2024-12-06 2024-12-06T00:00:00+08:00">2024-12-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-12-06T06:31:45.292Z" title="更新于 2024-12-06 2024-12-06T14:31:45+08:00">2024-12-06</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/SlayTheSpireMod/">SlayTheSpireMod</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h1 id="遗物图片"><a href="#遗物图片" class="headerlink" title="遗物图片"></a>遗物图片</h1><p>根据<a target="_blank" rel="noopener" href="https://github.com/daviscook477/BaseMod/wiki/Custom-Relics">BaseMod wiki CustomRelics</a>的说法, 遗物的实际图片内容大小应该在48~64像素, 而遗物图片应该是128像素.<br>但事实上, 根据我个人的测试, 遗物白色边框应当基于原始遗物<strong>边缘扩张 3 像素</strong>(这样和游戏原遗物边框大小相近, 其实偏小一点, 所以说不定 4 像素也可以). 因此, 事实上遗物大小极限应当在 58 像素左右. 一旦遗物大小超过64像素游戏会对遗物进行截取以适应64像素(准确的说, 应该是游戏本身就是直接截取中心64像素显示遗物小图, 例如在游戏页面和遗物收集页面).<br>要使用遗物图片, 可以直接传递遗物图片(或同时传递遗物图和轮廓图, 否则轮廓不会显示). 另外, 遗物轮廓图应当使用灰度图, 以便遗物边框能够正常附加角色颜色(如果将遗物放入角色专属遗物池).  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Seniorious</span> <span class="keyword">extends</span> <span class="title class_">CustomRelic</span> <span class="keyword">implements</span> <span class="title class_">ClickableRelic</span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">ID</span> <span class="operator">=</span> <span class="string">&quot;Lillia:Seniorious&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">IMG</span> <span class="operator">=</span> <span class="string">&quot;LilliaRes/img/relics/seniorious.png&quot;</span>;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">String</span> <span class="variable">OUTLINE</span> <span class="operator">=</span> <span class="string">&quot;LilliaRes/img/relics/outline/seniorious.png&quot;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Seniorious</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="built_in">super</span>(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(OUTLINE),</span><br><span class="line">                AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.CLINK);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Or:</span></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Seniorious</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">// 在这种情况下, 遗物边缘图不会显示.</span></span><br><span class="line">        <span class="built_in">super</span>(ID, ImageMaster.loadImage(IMG),</span><br><span class="line">                AbstractRelic.RelicTier.STARTER, AbstractRelic.LandingSound.CLINK);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>另外, 事实上遗物这个图片大小使用像素画比较合适, 但是游戏在放大遗物时对像素画风格的遗物不怎么友善(会变糊, 就类似线性延拓实现的放大). 同时, 目前我没有找到方法来指定遗物放大图的路径, 不过试图放大mod遗物时获取了如下信息:  </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">INFO helpers.ImageMaster&gt; [WARNING] No image at images/largeRelics/</span><br><span class="line">INFO helpers.ImageMaster&gt; [WARNING] No image at images/largeRelics/</span><br></pre></td></tr></table></figure>
+<p>尝试往mod的images添加largeRelics文件夹并加入同名遗物图片文件后依然出现此情况, 从而怀疑这里的文件夹指的是游戏本体的相应文件夹. 因此, 翻找<code>AbstractRelic</code>类发现:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">loadLargeImg</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.largeImg == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>.largeImg = ImageMaster.loadImage(<span class="string">&quot;images/largeRelics/&quot;</span> + <span class="built_in">this</span>.imgUrl);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>所以结论还是很简单的, 只要重写这个方法或指定<code>this.largeImg</code>就可以指定遗物大图了. 不过, <code>CustomRelic</code>类是重写了这个方法的, 这个应该是支持使用mod文件夹路径的, 所以只要指定<code>this.imgUrl</code>并且按照此方法的路径构建文件夹理论上就可以了(不过我不想实验, 我还是用<code>this.largeImg</code>吧).  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">loadLargeImg</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>.largeImg == <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="type">String</span> <span class="variable">path</span> <span class="operator">=</span> <span class="string">&quot;images/largeRelics/&quot;</span> + <span class="built_in">this</span>.imgUrl;</span><br><span class="line">        <span class="keyword">if</span> (Gdx.files.internal(path).exists()) &#123;</span><br><span class="line">            <span class="built_in">this</span>.largeImg = ImageMaster.loadImage(path);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不过其实大图的话轮廓也需要一个大图(添加<code>this.largeImg</code>之后WARNING从两个变成了一个), 但是我找来找去只找到<code>this.img</code>, <code>this.outlineImg</code>, <code>this.largeImg</code>这三个变量是Texture类型, 这就很不对劲啦, 算了反正大图轮廓直接用小图轮廓缩放看起来也没什么问题, 不管了(小图轮廓会用角色颜色, 大图轮廓统一黑色).  </p>
+<h1 id="自动添加遗物"><a href="#自动添加遗物" class="headerlink" title="自动添加遗物"></a>自动添加遗物</h1><p>遗物同样需要进行注册, 不过可以选择加入角色遗物池或全局遗物池(话说大部分遗物都是直接往角色遗物池里面加吧, 感觉原版遗物覆盖面还蛮广的). 以下依然来自<a target="_blank" rel="noopener" href="https://github.com/daviscook477/BaseMod/wiki/AutoAdd">BaseMod wiki AutoAdd</a>.  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">receiveEditRelics</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">AutoAdd</span>(MOD_ID)</span><br><span class="line">            .packageFilter(<span class="string">&quot;relics&quot;</span>)</span><br><span class="line">            .any(CustomRelic.class, (info, relic) -&gt; &#123;</span><br><span class="line">                BaseMod.addRelicToCustomPool(relic, CardColorEnum.Lillia_DARK_RED);</span><br><span class="line">                <span class="keyword">if</span> (info.seen) &#123;</span><br><span class="line">                    UnlockTracker.markRelicAsSeen(relic.relicId);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果要使用自动添加, 建议在遗物类界面指定是否可见和是否忽略自动添加.  </p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://sleepyHolo.github.io">HXW</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sleepyholo.github.io/2024/12/06/slay-the-spire-relic/">https://sleepyholo.github.io/2024/12/06/slay-the-spire-relic/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sleepyHolo.github.io" target="_blank">HXW的废纸堆</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Mod/">Mod</a><a class="post-meta__tags" href="/tags/SlayTheSpire/">SlayTheSpire</a></div><div class="post-share"><div class="social-share" data-image="/img/Holo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/02/16/rwmod-guide/" title="RW Mod A Beginner's Guide"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">上一篇</div><div class="info-item-2">RW Mod A Beginner's Guide</div></div><div class="info-2"><div class="info-item-1">一个简单的RW模组制作初学者指南,由于作者实力一般,仅作参考即可</div></div></div></a><a class="pagination-related" href="/2024/12/03/slay-the-spire-mod/" title="slay-the-spire-mod"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">slay-the-spire-mod</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的模组相关. 主要是一些小东西.</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/11/30/slay-the-spire-card/" title="slay-the-spire-card"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-30</div><div class="info-item-2">slay-the-spire-card</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的某些卡牌机制</div></div></div></a><a class="pagination-related" href="/2024/12/03/slay-the-spire-mod/" title="slay-the-spire-mod"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-03</div><div class="info-item-2">slay-the-spire-mod</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的模组相关. 主要是一些小东西.</div></div></div></a><a class="pagination-related" href="/2025/02/16/rwmod-guide/" title="RW Mod A Beginner&#39;s Guide"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2025-02-16</div><div class="info-item-2">RW Mod A Beginner&#39;s Guide</div></div><div class="info-2"><div class="info-item-1">一个简单的RW模组制作初学者指南,由于作者实力一般,仅作参考即可</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/Holo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">HXW</div><div class="author-info-description">Attention is All You Need. But I have None.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sleepyHolo"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%81%97%E7%89%A9%E5%9B%BE%E7%89%87"><span class="toc-number">1.</span> <span class="toc-text">遗物图片</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0%E9%81%97%E7%89%A9"><span class="toc-number">2.</span> <span class="toc-text">自动添加遗物</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/16/rwmod-guide/" title="RW Mod A Beginner's Guide">RW Mod A Beginner's Guide</a><time datetime="2025-02-15T16:00:00.000Z" title="发表于 2025-02-16 2025-02-16T00:00:00+08:00">2025-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/06/slay-the-spire-relic/" title="slay-the-spire-relic">slay-the-spire-relic</a><time datetime="2024-12-05T16:00:00.000Z" title="发表于 2024-12-06 2024-12-06T00:00:00+08:00">2024-12-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/03/slay-the-spire-mod/" title="slay-the-spire-mod">slay-the-spire-mod</a><time datetime="2024-12-02T16:00:00.000Z" title="发表于 2024-12-03 2024-12-03T00:00:00+08:00">2024-12-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/30/slay-the-spire-card/" title="slay-the-spire-card">slay-the-spire-card</a><time datetime="2024-11-29T16:00:00.000Z" title="发表于 2024-11-30 2024-11-30T00:00:00+08:00">2024-11-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/28/hello-world/" title="Hello World">Hello World</a><time datetime="2024-11-27T16:00:00.000Z" title="发表于 2024-11-28 2024-11-28T00:00:00+08:00">2024-11-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By HXW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

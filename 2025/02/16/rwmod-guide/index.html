@@ -1,0 +1,158 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RW Mod A Beginner's Guide | HXW的废纸堆</title><meta name="author" content="HXW"><meta name="copyright" content="HXW"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一个简单的RW模组制作初学者指南,由于作者实力一般,仅作参考即可">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RW Mod A Beginner&#39;s Guide">
+<meta property="og:url" content="https://sleepyholo.github.io/2025/02/16/rwmod-guide/index.html">
+<meta property="og:site_name" content="HXW的废纸堆">
+<meta property="og:description" content="一个简单的RW模组制作初学者指南,由于作者实力一般,仅作参考即可">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sleepyholo.github.io/img/Holo.png">
+<meta property="article:published_time" content="2025-02-15T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-02-16T13:05:09.851Z">
+<meta property="article:author" content="HXW">
+<meta property="article:tag" content="Mod">
+<meta property="article:tag" content="RustedWarfare">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sleepyholo.github.io/img/Holo.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://sleepyholo.github.io/2025/02/16/rwmod-guide/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RW Mod A Beginner\'s Guide',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg" style="background: linear-gradient(0deg, #0062be, #d5dfed, #0062be);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/Holo.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background: linear-gradient(0deg, #0062be, #925696, #28426e, #420347);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">HXW的废纸堆</span></a><a class="nav-page-title" href="/"><span class="site-name">RW Mod A Beginner's Guide</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">RW Mod A Beginner's Guide</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-02-15T16:00:00.000Z" title="发表于 2025-02-16 2025-02-16T00:00:00+08:00">2025-02-16</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-02-16T13:05:09.851Z" title="更新于 2025-02-16 2025-02-16T21:05:09+08:00">2025-02-16</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/RWMod/">RWMod</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="什么是RW模组"><a href="#什么是RW模组" class="headerlink" title="什么是RW模组"></a>什么是RW模组</h2><p>首先, 正如我们都知道的, RW是一款游戏(<del>这不是废话吗</del>). 那么, 基于RW制作的模组, 也可以认为是游戏. 一个游戏本质上只有以下三个方面: <strong>资源</strong>, <strong>场景</strong>, <strong>逻辑</strong>, 而我们的模组需要做的也就是基于你的想法, 在RW允许的范围内去修改这三个方面的内容, 从而实现一个模组.  </p>
+<h3 id="RW模组资源制作"><a href="#RW模组资源制作" class="headerlink" title="RW模组资源制作"></a>RW模组资源制作</h3><p>一个RW模组制作者不可能没玩过RW, RW这款游戏是由很多物体所构成的, 比如说一开始就有的基地, 建造陆军的工厂, 以及小坦克等等. 虽然这些物体在游戏中有着不同属性, 比如说基地是建筑, 而小坦是单位, 不过在一个模组中, 他们都被统称为单位. 这些单位的配置文件, 以及他们涉及的图像文件, 甚至音效文件, 都是RW这款游戏的<strong>资源</strong>.<br>在我们之前提及的三个方面中, 资源这个方面是RW给予模组最大的自由度的方面, 你可以随意修改单位的配置文件, 使用自己的图像文件, 或者更改涉及的任何音效. 再进一步, 你还可以添加单位攻击时的特效等等, 这些都是你在通过模组更改RW的游戏资源. 这个小指南的主要目标就是告诉你怎么修改RW的这些资源.  </p>
+<h3 id="RW模组场景制作"><a href="#RW模组场景制作" class="headerlink" title="RW模组场景制作"></a>RW模组场景制作</h3><p>简单来说, 场景就是一个游戏用于呈现游戏资源的画布. 对于RW这个rts游戏来说, 他的<strong>场景</strong>就是每一个地图. 你可以自己制作地图, 然后在游戏中使用他. 地图相对来讲是比较独立于模组的, 只要加载进游戏, 任何模组都可以使用. 不过, 对于某些特殊需要, 地图可能会专门用于配合某一个模组或者某一个玩法, 因此本指南也会简单涉及地图的制作.</p>
+<h3 id="RW模组逻辑介绍"><a href="#RW模组逻辑介绍" class="headerlink" title="RW模组逻辑介绍"></a>RW模组逻辑介绍</h3><p>游戏逻辑是描述游戏是如何运作的. 比如对于RW, 我的坦克应该如何移动, 坦克是怎么索敌的, ui上的按钮会如何响应玩家的点击, 这些都是由RW的作者Luke完成的, 模组不能对其做一丝一毫的修改.<br>正因如此, <strong>逻辑</strong>方面RW几乎没有给模组任何的自由度. 之所以说’几乎’没有自由度, 是因为随着RW的更新, 现在RW允许模组通过配置文件在一定程度上修改单位的部分响应逻辑, 不过依然非常受限. 此指南会(在进阶部分)介绍这种逻辑的修改方法.  </p>
+<h3 id="RW模组本质"><a href="#RW模组本质" class="headerlink" title="RW模组本质"></a>RW模组本质</h3><p>通过以上分析, 我们已经知道了RW对于模组的支持: 在资源方面模组的自由度最高, 其次是场景方面, 而逻辑方面自由度最低. 我们要制作一个RW的模组, 不可能脱离RW给模组提供的环境. 因此, 一个RW模组的重心也是在资源方面, 其次是场景也就是地图制作, 最后才是逻辑的配置.  </p>
+<p>那么, RW模组的本质是什么呢? 想必大家都知道打小龙虾系列吊图, 那么我们一起来做一个思维实验. 现在是沙盒模式, 你指挥单位和虫族对战. 在T1的时候, 你在用’小坦克’打’近战虫’; 在T3的时候, 你在用’实验悬浮坦克’打’杀手Alpha’; 在打了模组并且T114的时候, 你在用’神威无敌征外星异形坦克-META’打’末日终焉虫母-基因强化100’…<br>Stop! 现在你应该明白, 所谓的RW模组, 本质上就是<u>换皮小游戏</u>! 模组制作者通过修改配置文件来改变玩家所看到的一切, 但他本质上还是只修改了配置文件.  </p>
+<p><em><strong>那我们为什么要做RW的模组呢?</strong></em><br><strong>上手简单</strong>: 正如我们所看到的, 作为配置文件式小游戏, 制作RW模组的核心过程就是填写配置文件参数表. 因此, 你不需要会任何编程语言也可以完成一个模组的制作(理论上, 毕竟还有搞贴图呢).<br><strong>这很酷</strong>: 嘿, 你真的不想自己修改游戏的参数吗? 管他是不是换皮游戏, 你就是上帝欸!  </p>
+<p>那么, 让我们开始吧!  </p>
+<h2 id="RW模组基本要素"><a href="#RW模组基本要素" class="headerlink" title="RW模组基本要素"></a>RW模组基本要素</h2><h2 id="模组制作工具"><a href="#模组制作工具" class="headerlink" title="模组制作工具"></a>模组制作工具</h2><h2 id="基础代码-一个最简洁的攻击单位"><a href="#基础代码-一个最简洁的攻击单位" class="headerlink" title="基础代码:一个最简洁的攻击单位"></a>基础代码:一个最简洁的攻击单位</h2><h2 id="基础贴图"><a href="#基础贴图" class="headerlink" title="基础贴图"></a>基础贴图</h2><h2 id="使用模组管理你的单位"><a href="#使用模组管理你的单位" class="headerlink" title="使用模组管理你的单位"></a>使用模组管理你的单位</h2><h2 id="代码进阶-添加单位行动"><a href="#代码进阶-添加单位行动" class="headerlink" title="代码进阶:添加单位行动"></a>代码进阶:添加单位行动</h2><h2 id="更复杂的单位-添加手-腿"><a href="#更复杂的单位-添加手-腿" class="headerlink" title="更复杂的单位:添加手&amp;腿"></a>更复杂的单位:添加手&amp;腿</h2><h2 id="可重构代码-模板"><a href="#可重构代码-模板" class="headerlink" title="可重构代码:模板"></a>可重构代码:模板</h2><h2 id="模组进阶-模板式模组架构"><a href="#模组进阶-模板式模组架构" class="headerlink" title="模组进阶:模板式模组架构"></a>模组进阶:模板式模组架构</h2><h2 id="中场休息"><a href="#中场休息" class="headerlink" title="中场休息"></a>中场休息</h2><h2 id="地图制作基础-遭遇战"><a href="#地图制作基础-遭遇战" class="headerlink" title="地图制作基础:遭遇战"></a>地图制作基础:遭遇战</h2><h2 id="独立模组制作-替换基地"><a href="#独立模组制作-替换基地" class="headerlink" title="独立模组制作:替换基地"></a>独立模组制作:替换基地</h2><h2 id="RW内置资源-自定义资源"><a href="#RW内置资源-自定义资源" class="headerlink" title="RW内置资源&amp;自定义资源"></a>RW内置资源&amp;自定义资源</h2><h2 id="基础RW逻辑支持"><a href="#基础RW逻辑支持" class="headerlink" title="基础RW逻辑支持"></a>基础RW逻辑支持</h2><h2 id="地图制作进阶-战役"><a href="#地图制作进阶-战役" class="headerlink" title="地图制作进阶:战役"></a>地图制作进阶:战役</h2><h2 id="更好看的战争-效果制作"><a href="#更好看的战争-效果制作" class="headerlink" title="更好看的战争:效果制作"></a>更好看的战争:效果制作</h2><h2 id="让单位运动-动画制作"><a href="#让单位运动-动画制作" class="headerlink" title="让单位运动:动画制作"></a>让单位运动:动画制作</h2><h2 id="基础附属使用"><a href="#基础附属使用" class="headerlink" title="基础附属使用"></a>基础附属使用</h2><h2 id="通过单位产生的一切-刷兵-刷弹"><a href="#通过单位产生的一切-刷兵-刷弹" class="headerlink" title="通过单位产生的一切:刷兵&amp;刷弹"></a>通过单位产生的一切:刷兵&amp;刷弹</h2><h2 id="1-15新支持-贴画"><a href="#1-15新支持-贴画" class="headerlink" title="1.15新支持:贴画"></a>1.15新支持:贴画</h2><h2 id="尾声"><a href="#尾声" class="headerlink" title="尾声"></a>尾声</h2></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://sleepyHolo.github.io">HXW</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://sleepyholo.github.io/2025/02/16/rwmod-guide/">https://sleepyholo.github.io/2025/02/16/rwmod-guide/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="https://sleepyHolo.github.io" target="_blank">HXW的废纸堆</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Mod/">Mod</a><a class="post-meta__tags" href="/tags/RustedWarfare/">RustedWarfare</a></div><div class="post-share"><div class="social-share" data-image="/img/Holo.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2024/12/06/slay-the-spire-relic/" title="slay-the-spire-relic"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">slay-the-spire-relic</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的遗物</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/2024/12/06/slay-the-spire-relic/" title="slay-the-spire-relic"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-06</div><div class="info-item-2">slay-the-spire-relic</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的遗物</div></div></div></a><a class="pagination-related" href="/2024/11/30/slay-the-spire-card/" title="slay-the-spire-card"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-30</div><div class="info-item-2">slay-the-spire-card</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的某些卡牌机制</div></div></div></a><a class="pagination-related" href="/2024/12/03/slay-the-spire-mod/" title="slay-the-spire-mod"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-03</div><div class="info-item-2">slay-the-spire-mod</div></div><div class="info-2"><div class="info-item-1">关于Slay The Spire的模组相关. 主要是一些小东西.</div></div></div></a></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/Holo.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">HXW</div><div class="author-info-description">Attention is All You Need. But I have None.</div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/sleepyHolo"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRW%E6%A8%A1%E7%BB%84"><span class="toc-number">1.</span> <span class="toc-text">什么是RW模组</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#RW%E6%A8%A1%E7%BB%84%E8%B5%84%E6%BA%90%E5%88%B6%E4%BD%9C"><span class="toc-number">1.1.</span> <span class="toc-text">RW模组资源制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RW%E6%A8%A1%E7%BB%84%E5%9C%BA%E6%99%AF%E5%88%B6%E4%BD%9C"><span class="toc-number">1.2.</span> <span class="toc-text">RW模组场景制作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RW%E6%A8%A1%E7%BB%84%E9%80%BB%E8%BE%91%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.3.</span> <span class="toc-text">RW模组逻辑介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RW%E6%A8%A1%E7%BB%84%E6%9C%AC%E8%B4%A8"><span class="toc-number">1.4.</span> <span class="toc-text">RW模组本质</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RW%E6%A8%A1%E7%BB%84%E5%9F%BA%E6%9C%AC%E8%A6%81%E7%B4%A0"><span class="toc-number">2.</span> <span class="toc-text">RW模组基本要素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E5%88%B6%E4%BD%9C%E5%B7%A5%E5%85%B7"><span class="toc-number">3.</span> <span class="toc-text">模组制作工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E4%BB%A3%E7%A0%81-%E4%B8%80%E4%B8%AA%E6%9C%80%E7%AE%80%E6%B4%81%E7%9A%84%E6%94%BB%E5%87%BB%E5%8D%95%E4%BD%8D"><span class="toc-number">4.</span> <span class="toc-text">基础代码:一个最简洁的攻击单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E8%B4%B4%E5%9B%BE"><span class="toc-number">5.</span> <span class="toc-text">基础贴图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E6%A8%A1%E7%BB%84%E7%AE%A1%E7%90%86%E4%BD%A0%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="toc-number">6.</span> <span class="toc-text">使用模组管理你的单位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E8%BF%9B%E9%98%B6-%E6%B7%BB%E5%8A%A0%E5%8D%95%E4%BD%8D%E8%A1%8C%E5%8A%A8"><span class="toc-number">7.</span> <span class="toc-text">代码进阶:添加单位行动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A4%8D%E6%9D%82%E7%9A%84%E5%8D%95%E4%BD%8D-%E6%B7%BB%E5%8A%A0%E6%89%8B-%E8%85%BF"><span class="toc-number">8.</span> <span class="toc-text">更复杂的单位:添加手&amp;腿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E9%87%8D%E6%9E%84%E4%BB%A3%E7%A0%81-%E6%A8%A1%E6%9D%BF"><span class="toc-number">9.</span> <span class="toc-text">可重构代码:模板</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E7%BB%84%E8%BF%9B%E9%98%B6-%E6%A8%A1%E6%9D%BF%E5%BC%8F%E6%A8%A1%E7%BB%84%E6%9E%B6%E6%9E%84"><span class="toc-number">10.</span> <span class="toc-text">模组进阶:模板式模组架构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%AD%E5%9C%BA%E4%BC%91%E6%81%AF"><span class="toc-number">11.</span> <span class="toc-text">中场休息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C%E5%9F%BA%E7%A1%80-%E9%81%AD%E9%81%87%E6%88%98"><span class="toc-number">12.</span> <span class="toc-text">地图制作基础:遭遇战</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8B%AC%E7%AB%8B%E6%A8%A1%E7%BB%84%E5%88%B6%E4%BD%9C-%E6%9B%BF%E6%8D%A2%E5%9F%BA%E5%9C%B0"><span class="toc-number">13.</span> <span class="toc-text">独立模组制作:替换基地</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RW%E5%86%85%E7%BD%AE%E8%B5%84%E6%BA%90-%E8%87%AA%E5%AE%9A%E4%B9%89%E8%B5%84%E6%BA%90"><span class="toc-number">14.</span> <span class="toc-text">RW内置资源&amp;自定义资源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80RW%E9%80%BB%E8%BE%91%E6%94%AF%E6%8C%81"><span class="toc-number">15.</span> <span class="toc-text">基础RW逻辑支持</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%B0%E5%9B%BE%E5%88%B6%E4%BD%9C%E8%BF%9B%E9%98%B6-%E6%88%98%E5%BD%B9"><span class="toc-number">16.</span> <span class="toc-text">地图制作进阶:战役</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B4%E5%A5%BD%E7%9C%8B%E7%9A%84%E6%88%98%E4%BA%89-%E6%95%88%E6%9E%9C%E5%88%B6%E4%BD%9C"><span class="toc-number">17.</span> <span class="toc-text">更好看的战争:效果制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A9%E5%8D%95%E4%BD%8D%E8%BF%90%E5%8A%A8-%E5%8A%A8%E7%94%BB%E5%88%B6%E4%BD%9C"><span class="toc-number">18.</span> <span class="toc-text">让单位运动:动画制作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E9%99%84%E5%B1%9E%E4%BD%BF%E7%94%A8"><span class="toc-number">19.</span> <span class="toc-text">基础附属使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%8D%95%E4%BD%8D%E4%BA%A7%E7%94%9F%E7%9A%84%E4%B8%80%E5%88%87-%E5%88%B7%E5%85%B5-%E5%88%B7%E5%BC%B9"><span class="toc-number">20.</span> <span class="toc-text">通过单位产生的一切:刷兵&amp;刷弹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-15%E6%96%B0%E6%94%AF%E6%8C%81-%E8%B4%B4%E7%94%BB"><span class="toc-number">21.</span> <span class="toc-text">1.15新支持:贴画</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%BE%E5%A3%B0"><span class="toc-number">22.</span> <span class="toc-text">尾声</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/02/16/rwmod-guide/" title="RW Mod A Beginner's Guide">RW Mod A Beginner's Guide</a><time datetime="2025-02-15T16:00:00.000Z" title="发表于 2025-02-16 2025-02-16T00:00:00+08:00">2025-02-16</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/06/slay-the-spire-relic/" title="slay-the-spire-relic">slay-the-spire-relic</a><time datetime="2024-12-05T16:00:00.000Z" title="发表于 2024-12-06 2024-12-06T00:00:00+08:00">2024-12-06</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/03/slay-the-spire-mod/" title="slay-the-spire-mod">slay-the-spire-mod</a><time datetime="2024-12-02T16:00:00.000Z" title="发表于 2024-12-03 2024-12-03T00:00:00+08:00">2024-12-03</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/30/slay-the-spire-card/" title="slay-the-spire-card">slay-the-spire-card</a><time datetime="2024-11-29T16:00:00.000Z" title="发表于 2024-11-30 2024-11-30T00:00:00+08:00">2024-11-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/28/hello-world/" title="Hello World">Hello World</a><time datetime="2024-11-27T16:00:00.000Z" title="发表于 2024-11-28 2024-11-28T00:00:00+08:00">2024-11-28</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By HXW</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
